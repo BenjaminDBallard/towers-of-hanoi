@@ -1,14 +1,20 @@
-[data-row] {
+.board{
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 34px;
-  margin: 25px;
-  border: 1px solid lightgray;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 60px;
 }
 
-.row {
-  z-index: -10;
+[data-row] {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  height: 200px;
+  width: 20px;
+  margin: 25px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
 }
 
 [data-row].red {
@@ -28,7 +34,10 @@
 }
 
 .stone {
-  z-index: 10;
+  z-index: 20;
+  border-radius: 999px;
+  border: 1px solid rgb(224, 188, 188);
+  
 }
 
 [data-color] {
@@ -38,22 +47,26 @@
 
 [data-color="blue"] {
   height: 33px;
-  background-color: blue;
+  width: 60px;
+  background: radial-gradient(farthest-corner at 60px 45px, rgb(0, 3, 29) 0%, rgb(0, 60, 255) 50%);
 }
 
 [data-color="green"] {
   height: 33px;
-  background-color: green;
+  width: 80px;
+  background: radial-gradient(farthest-corner at 80px 45px, rgb(0, 3, 29) 0%, rgb(0, 129, 0) 50%);
 }
 
 [data-color="red"] {
   height: 33px;
-  background-color: red;
+  width: 100px;
+  background: radial-gradient(farthest-corner at 100px 45px, rgb(0, 3, 29) 0%, rgb(255, 0, 0) 50%);
 }
 
 [data-color="yellow"] {
   height: 33px;
-  background-color: yellow;
+  width: 120px;
+  background: radial-gradient(farthest-corner at 120px 45px, rgb(0, 3, 29) 0%, rgb(255, 238, 0) 50%);
 }
 
 #announce-game-won {
