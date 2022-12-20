@@ -1,3 +1,39 @@
+body{
+  background-color: antiquewhite;
+  margin-top: 100px;
+}
+
+h1{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 60px;
+}
+
+hr{
+  width: 400px;
+  border: 2px solid rgb(131, 131, 131);
+}
+
+.hud{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+button{
+  border-radius: 15px;
+  height: fit-content;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(233, 183, 19);
+}
+
+button:hover{
+  background-color: rgb(173, 134, 5);
+}
+
 .board{
   display: flex;
   flex-direction: row-reverse;
@@ -13,7 +49,7 @@
   height: 200px;
   width: 20px;
   margin: 25px;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(192, 192, 192);
   border-radius: 8px;
 }
 

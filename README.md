@@ -46,9 +46,9 @@ order of operations:
 
 ## Additional test cases
 
-1. move several blocks ✔
-2. test valid inputs ✔
-3. verify restart on win✔
+1. ✔ move several blocks
+2. ✔ test valid inputs
+3. ✔ verify restart on win
 
 <!-- ## Checklist -->
 
@@ -61,8 +61,8 @@ order of operations:
 <!-- 1. 10pts - **Graphical User Interface** - Take this game out of the terminal by adding a User Interface that uses `towersOfHanoi()` function in `index.js`. -->
 
 - **Extended Practice Bonus!!**
-  - Keeps count of moves as player plays games✔
-  - Sound Effects
-  - Peaceful Background
-  - Vertical columns ✔
-  - Proportional Stones/tokens ✔
+  - ✔ Keeps count of moves as player plays games
+  - ✔ Sound Effects
+  - ✔ Peaceful Background
+  - ✔ Vertical columns
+  - ✔ Proportional Stones/tokens

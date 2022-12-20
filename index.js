@@ -5,6 +5,11 @@ let rowEnd = null;
 let gameBoard = document.getElementById("board");
 let moveCount = 0;
 document.getElementById("move-count").innerHTML = moveCount;
+let audio = new Audio("click.wav");
+
+function playAudio() {
+  audio.play();
+}
 
 // this function is called when a row is clicked.
 const selectRow = (row) => {
@@ -17,8 +22,10 @@ const selectRow = (row) => {
 
   if (stone === null) {
     pickUpStone(row.id);
+    playAudio();
   } else {
     dropStone(row.id, stone);
+    playAudio();
     stone = null;
     size = null;
     rowStart = null;
