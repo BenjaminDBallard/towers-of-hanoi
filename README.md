@@ -64,5 +64,5 @@ order of operations:
   - Keeps count of moves as player plays games
   - Sound Effects
   - Peaceful Background
-    ✔ - Vertical columns
-    ✔ - Proportional Stones/tokens
+  - Vertical columns ✔
+  - Proportional Stones/tokens ✔
