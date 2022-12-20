@@ -61,7 +61,7 @@ order of operations:
 <!-- 1. 10pts - **Graphical User Interface** - Take this game out of the terminal by adding a User Interface that uses `towersOfHanoi()` function in `index.js`. -->
 
 - **Extended Practice Bonus!!**
-  - Keeps count of moves as player plays games
+  - Keeps count of moves as player plays games✔
   - Sound Effects
   - Peaceful Background
   - Vertical columns ✔

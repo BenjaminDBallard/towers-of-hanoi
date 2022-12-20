@@ -2,6 +2,9 @@ let stone = null;
 let size = null;
 let rowStart = null;
 let rowEnd = null;
+let gameBoard = document.getElementById("board");
+let moveCount = 0;
+document.getElementById("move-count").innerHTML = moveCount;
 
 // this function is called when a row is clicked.
 const selectRow = (row) => {
@@ -19,6 +22,8 @@ const selectRow = (row) => {
     stone = null;
     size = null;
     rowStart = null;
+    moveCount++;
+    document.getElementById("move-count").innerHTML = moveCount;
   }
 };
 
@@ -43,6 +48,39 @@ const dropStone = (rowID, stone) => {
     document.getElementById(rowStart).appendChild(stone);
   }
 };
+
+const domWin = () => {
+  alert("you Win!");
+  resetGame();
+};
+
+function resetGame() {
+  clearBoard();
+  newBoard();
+  moveCount = 0;
+  document.getElementById("move-count").innerHTML = moveCount;
+}
+
+function clearBoard() {
+  while (gameBoard.firstChild) {
+    gameBoard.removeChild(gameBoard.lastChild);
+  }
+}
+
+function newBoard() {
+  // gameBoard.innerHTML =
+  //   "<div id='c' data-row='top' class='red row' onclick='selectRow(this)'></div><div id='b' data-row='middle' class='yellow row' onclick='selectRow(this)'></div><div id='a' class='green row' data-row='bottom' onclick='selectRow(this)'><div id='4' data-size='4' data-color='yellow' class='stone'></div><div id='3' data-size='3' data-color='red' class='stone'></div><div id='2' data-size='2' data-color='green' class='stone'></div><div id='1' data-size='1' data-color='blue' class='stone'></div></div>";
+
+  document.getElementById("board").innerHTML =
+    "<div id='c' data-row='top' class='red row' onclick='selectRow(this)'></div><div id='b' data-row='middle' class='yellow row' onclick='selectRow(this)'></div><div id='a' class='green row' data-row='bottom' onclick='selectRow(this)'><div id='4' data-size='4' data-color='yellow' class='stone'></div><div id='3' data-size='3' data-color='red' class='stone'></div><div id='2' data-size='2' data-color='green' class='stone'></div><div id='1' data-size='1' data-color='blue' class='stone'></div></div>";
+
+  const stacks = {
+    a: [4, 3, 2, 1],
+    b: [],
+    c: [],
+  };
+  rowEnd = null;
+}
 
 // -------------------------------------------------------------
 
@@ -125,21 +163,13 @@ const checkForWin = () => {
     deepEqual(stacks, { a: [], b: [4, 3, 2, 1], c: [] }) ||
     deepEqual(stacks, { a: [], b: [], c: [4, 3, 2, 1] })
   ) {
+    domWin();
     console.log("You Win!");
-    alert("you Win!");
-    winPos = document.getElementById(rowEnd);
-    startPos = document.getElementById("a");
-    while (winPos.firstChild) {
-      let reset = winPos.removeChild(winPos.lastElementChild);
-      startPos.insertBefore(reset, startPos.firstChild);
-    }
     const stacks = {
       a: [4, 3, 2, 1],
       b: [],
       c: [],
     };
-
-    rowEnd = null;
     return true;
   } else {
     return false;
